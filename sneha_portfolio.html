@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneha Sebastian - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        
+        .links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        main {
+            padding: 40px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .about {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .projects-grid {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .project {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .project:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .project h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .project-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        
+        .project p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .project-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .project-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .strengths {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .strength-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+        
+        .interests {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .interests ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .interests li {
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            color: #555;
+        }
+        
+        .interests li:before {
+            content: "🚀 ";
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            main {
+                padding: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sneha Sebastian</h1>
+            <p>Support Engineer | AI/ML Engineer | Product Builder</p>
+            <div class="links">
+                <a href="mailto:snehapainen@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/sebastian-sneha" target="_blank">LinkedIn</a>
+                <a href="https://github.com/sneha1892" target="_blank">GitHub</a>
+                <a href="https://github.com/snehA5e8a" target="_blank">Projects</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <h2>About Me</h2>
+                <div class="about">
+                    <p>I'm a technical problem-solver with a unique journey from managing EdTech teams to building AI applications. After 6 years leading product operations and scaling teams from 0 to 50+ members, I pivoted to engineering - teaching myself Python, AI/ML, and modern development practices.</p>
+                    <p style="margin-top: 15px;">Currently, I support developers in the CopilotKit and AG UI communities at Orca AI, where I answer technical questions and help developers build with agent frameworks. This role gives me direct insight into what developers need, which I combine with my ability to rapidly prototype and ship solutions.</p>
+                    <p style="margin-top: 15px;">I believe in learning by building - all my projects are born from real needs, whether it's automating my support workflow or creating tools for daily life.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages & Frameworks</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>JavaScript/TypeScript</li>
+                            <li>React</li>
+                            <li>Vite</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI/ML & Agents</h3>
+                        <ul>
+                            <li>LLMs & Transformers</li>
+                            <li>Fine-tuning & Neural Networks</li>
+                            <li>CopilotKit</li>
+                            <li>LangGraph & LangChain</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Platforms</h3>
+                        <ul>
+                            <li>AWS Lambda</li>
+                            <li>Firebase & NeonDB</li>
+                            <li>Vercel & Render</li>
+                            <li>Streamlit</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development Approach</h3>
+                        <ul>
+                            <li>AI-led Development (Cursor)</li>
+                            <li>PWA Development</li>
+                            <li>Rapid Prototyping</li>
+                            <li>User-Centric Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project">
+                        <span class="project-type">Production Tool</span>
+                        <h3>CopilotKit Support Assistant</h3>
+                        <p>Multi-threaded chat interface built with CopilotKit to streamline support workflows. Integrates with AWS Lambda agent that has access to CopilotKit repos and documentation. Features thread switching, localStorage persistence, and automated answer generation for Discord support questions. Actively used in daily workflow.</p>
+                        <div class="project-links">
+                            <a href="https://chatgpt-clone-c59l-git-main-snehas-projects-a16b8dbb.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/sneha1892" target="_blank">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-type">PWA Application</span>
+                        <h3>Ikigai - Design Your Life</h3>
+                        <p>Comprehensive habit tracking and day planning PWA with smart AI assistant. Features voice interface with Python backend hosted on Render, Firebase database for real-time sync, and intelligent task suggestions. Built with Vite + React for optimal performance.</p>
+                        <div class="project-links">
+                            <a href="https://design-your-life.pro/" target="_blank">Live App</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-type">PWA Application</span>
+                        <h3>Homework Pane</h3>
+                        <p>Simple, focused task management app for tracking children's homework assignments. Built as a practical solution for daily family needs. Firebase backend with offline support.</p>
+                        <div class="project-links">
+                            <a href="https://homework-pane.web.app/" target="_blank">Live App</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-type">Learning Demo</span>
+                        <h3>CopilotKit Demos</h3>
+                        <p>Series of demos exploring different CopilotKit patterns: direct-to-LLM with state persistence and user confirmations, CopilotKit + LangGraph integration for creative use cases (haiku generation). Built to understand agent frameworks deeply.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/sneha1892?tab=repositories" target="_blank">View Repos</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-type">AI/ML Project</span>
+                        <h3>Hiring Assistant</h3>
+                        <p>Interview automation system using open-source LLM APIs. Conducts structured interviews, evaluates responses, and stores data in NeonDB. Built with Streamlit for quick prototyping during learning phase.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/snehA5e8a" target="_blank">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-type">AI/ML Project</span>
+                        <h3>Debate Agent System</h3>
+                        <p>Real-time multi-agent debate system where AI agents argue different perspectives on any topic. Implemented with Python classes, custom tools as functions, and real-time interaction patterns. Built to explore agent coordination and communication.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/snehA5e8a" target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Key Strengths</h2>
+                <div class="strengths">
+                    <span class="strength-tag">Quick Self-Learner</span>
+                    <span class="strength-tag">Ships Fast</span>
+                    <span class="strength-tag">Startup Background</span>
+                    <span class="strength-tag">Empathetic Product Design</span>
+                    <span class="strength-tag">Community-Focused</span>
+                    <span class="strength-tag">Bridges Technical + Product</span>
+                    <span class="strength-tag">Rapid Prototyping</span>
+                    <span class="strength-tag">User-Centric Thinking</span>
+                    <span class="strength-tag">Process Builder</span>
+                    <span class="strength-tag">Team Leadership</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Interests & Learning</h2>
+                <div class="interests">
+                    <p style="color: #555; margin-bottom: 10px;">I'm particularly excited about:</p>
+                    <ul>
+                        <li>Agent Frameworks & Multi-Agent Systems</li>
+                        <li>Agent Evaluation & Testing Methodologies</li>
+                        <li>Product-Led Growth Strategies</li>
+                        <li>Developer Experience & Community Building</li>
+                        <li>AI-Assisted Development Tools</li>
+                        <li>Building Practical AI Applications</li>
+                    </ul>
+                    <p style="color: #555; margin-top: 20px;">Currently diving deeper into agent frameworks while supporting the CopilotKit community. Always looking to bridge the gap between what developers need and what's possible to build.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Open to collaboration and interesting projects</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Built with curiosity and lots of coffee ☕</p>
+        </footer>
+    </div>
+</body>
+</html>
